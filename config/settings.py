@@ -27,7 +27,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'pages',
+
+    #Third party
+    'crispy_forms',
 ]
+
+# django crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -118,3 +124,15 @@ LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static')),]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
